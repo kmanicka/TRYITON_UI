@@ -1,0 +1,11 @@
+#{extends 'main.html' /}
+#{set title:'Gallery' /}
+
+
+<h2>Saved Images</h2>
+
+#{list savedPhotoNames, as:'photoname' }
+	<img src="/public/images/savedimages/${photoname}" />
+#{/list}
+
+
