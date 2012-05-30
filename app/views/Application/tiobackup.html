@@ -1,0 +1,27 @@
+#{extends 'main.html' /}
+#{set title:'PopUp' /}
+
+<html>
+<head>
+<style type="text/css">
+.bottom {
+ 	margin-left:40%;
+}
+</style>
+</head>
+
+<form method="POST" action="uploadPicture" enctype="multipart/form-data">
+	<img src="${imagepath}" />
+
+	<br><br><br>
+	<div class="bottom">
+		<input type="hidden" name="captured_image" value="${imagepath}" />
+		<input type="submit" name="submit" value="Capture" />
+		<input type="button" name="close" value="Close" onclick="self.close()"/>
+	</div>
+</form>
+ 
+
+
+
+</html>

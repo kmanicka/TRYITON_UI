@@ -23,7 +23,6 @@ public class Application extends Controller {
     }
     
     public static void tio(){
-    	
     	String imagepath = params.get("path");
     	render(imagepath);
     }
@@ -33,8 +32,13 @@ public class Application extends Controller {
     	
     	String image = params.get("captured_image");
     	
+<<<<<<< HEAD
 //    	System.out.println("image path is "+image);
     	File picture = new File("C:\\Users\\kard\\Desktop\\KARTHICK\\eBay\\BILLING\\workspace\\TRYITON_UI\\"+image);
+=======
+    	System.out.println("image path is "+image);
+    	File picture = new File("/Users/kmanickavelu/workspace/TRYITON_UI/"+image);
+>>>>>>> integrate camera
     	
     	File saved = copyTo(picture);
     	
@@ -45,12 +49,20 @@ public class Application extends Controller {
 //		System.out.println("Absolute path :"+photo1.getAbsolutePath());
     	
     	File photo2 = 
+<<<<<<< HEAD
     			new File("C:\\Users\\kard\\Desktop\\KARTHICK\\eBay\\BILLING\\workspace\\TRYITON_UI\\public\\images\\savedimages\\saved_"+photo1.getName());
     			//new File("\\public\\images\\savedimages\\saved_"+photo1.getName());
     	try{
     		  System.out.println("photo1 is "+photo1);
     		  System.out.println("photo saved at "+photo2);
     		 
+=======
+    			new File("/Users/kmanickavelu/workspace/TRYITON_UI/public/images/savedimages/saved_"+photo1.getName());
+    			//new File("\\public\\images\\savedimages\\saved_"+photo1.getName());
+    	try{
+    		 System.out.println("photo1 is "+photo1);
+    		 System.out.println("photo saved at "+photo2);
+>>>>>>> integrate camera
     		  InputStream in = new FileInputStream(photo1);
     		  OutputStream out = new FileOutputStream(photo2);
     		  byte[] buf = new byte[1024];
@@ -77,7 +89,11 @@ public class Application extends Controller {
     	List<String> savedPhotos = new ArrayList<String>();
     	List<String> savedPhotoNames = new ArrayList<String>();
     	
+<<<<<<< HEAD
     	File dir = new File("C:\\\\Users\\\\kard\\\\Desktop\\\\KARTHICK\\\\eBay\\\\BILLING\\\\workspace\\\\TRYITON_UI\\\\public\\\\images\\\\savedimages\\\\");
+=======
+    	File dir = new File("/Users/kmanickavelu/workspace/TRYITON_UI/public/images/savedimages");
+>>>>>>> integrate camera
     	File[] files = dir.listFiles();
     	for (int fileInList = 0; fileInList < files.length; fileInList++)  
     	 {  
