@@ -29,24 +29,28 @@ public class Application extends Controller {
     }
     
     public static void uploadPicture() {
-    	System.out.println("inside uploadPicture");
+//    	System.out.println("inside uploadPicture");
     	
     	String image = params.get("captured_image");
     	
-    	System.out.println("image path is "+image);
-    	File picture = new File("C:\\Users\\kard\\Desktop\\KARTHICK\\eBay\\BILLING\\workspace\\Ushatryiton\\"+image);
+//    	System.out.println("image path is "+image);
+    	File picture = new File("C:\\Users\\kard\\Desktop\\KARTHICK\\eBay\\BILLING\\workspace\\TRYITON_UI\\"+image);
     	
     	File saved = copyTo(picture);
+    	
+    	render("Application/message.html");
     }
     
     public static File copyTo(File photo1){
-		System.out.println("Absolute path :"+photo1.getAbsolutePath());
+//		System.out.println("Absolute path :"+photo1.getAbsolutePath());
     	
     	File photo2 = 
-    			new File("C:\\Users\\kard\\Desktop\\KARTHICK\\eBay\\BILLING\\workspace\\Ushatryiton\\public\\images\\savedimages\\saved_"+photo1.getName());
+    			new File("C:\\Users\\kard\\Desktop\\KARTHICK\\eBay\\BILLING\\workspace\\TRYITON_UI\\public\\images\\savedimages\\saved_"+photo1.getName());
     			//new File("\\public\\images\\savedimages\\saved_"+photo1.getName());
     	try{
-    		 System.out.println("photo1 is "+photo1);
+    		  System.out.println("photo1 is "+photo1);
+    		  System.out.println("photo saved at "+photo2);
+    		 
     		  InputStream in = new FileInputStream(photo1);
     		  OutputStream out = new FileOutputStream(photo2);
     		  byte[] buf = new byte[1024];
@@ -73,7 +77,7 @@ public class Application extends Controller {
     	List<String> savedPhotos = new ArrayList<String>();
     	List<String> savedPhotoNames = new ArrayList<String>();
     	
-    	File dir = new File("C:\\\\Users\\\\kard\\\\Desktop\\\\KARTHICK\\\\eBay\\\\BILLING\\\\workspace\\\\Ushatryiton\\\\public\\\\images\\\\savedimages\\\\");
+    	File dir = new File("C:\\\\Users\\\\kard\\\\Desktop\\\\KARTHICK\\\\eBay\\\\BILLING\\\\workspace\\\\TRYITON_UI\\\\public\\\\images\\\\savedimages\\\\");
     	File[] files = dir.listFiles();
     	for (int fileInList = 0; fileInList < files.length; fileInList++)  
     	 {  

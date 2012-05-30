@@ -33,5 +33,5 @@ function openWindow(e) {
 
 function openGallery(e){
 	e.preventDefault();
-	window.open("viewSavedPhotos",'','top=50,left=500,width=500px,height=500px,location=no,menubar=no,toolbar=no,scrollbars=yes');
+	window.open("viewSavedPhotos",'','top=50,left=300,width=500px,height=500px,location=no,menubar=no,toolbar=no,scrollbars=yes');
 }
