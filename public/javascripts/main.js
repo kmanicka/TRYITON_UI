@@ -27,7 +27,7 @@ function openWindow(e) {
 
 	//window.open('/public/images/glassA.jpg', 
 	//		'TRY IT ON POPUP', 'top=50,left=500,width=400px,height=500px,location=no,menubar=no,toolbar=no,scrollbars=yes');
-	window.open("tio?path="+url,'','top=50,left=500,width=500px,height=500px,location=no,menubar=no,toolbar=no,scrollbars=yes');
+	window.open("tio?path="+url,'','top=50,left=500,width=1000px,height=1000px,location=no,menubar=no,toolbar=no,scrollbars=yes');
 	}
 
 
