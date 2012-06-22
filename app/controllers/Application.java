@@ -30,17 +30,12 @@ public class Application extends Controller {
 	
 	
 	public static void saveImage(String file) {
-		
-//		System.out.println("Application.saveImage() 1 " + file.substring(0,1000));
-		
 		String file1 = file.substring(22);
-		
-//		System.out.println("Application.saveImage() 2 " + file1.substring(0,1000));
 		
 		BASE64Decoder base64Decoder = new BASE64Decoder();
 		try {
 			byte[] decodedBytes = base64Decoder.decodeBuffer(file1);
-			File newfile = new File("public" +File.separator +"images"+File.separator+"trialimages"+File.separator +"test_glass1.png");
+			File newfile = new File("public" +File.separator +"images"+File.separator+"trialimages"+File.separator +"trialimage.png");
 			FileOutputStream writer = new FileOutputStream(newfile);
 			System.out.println("Application.saveImage() imaged saved at path " + newfile.getAbsolutePath());
 			writer.write(decodedBytes);
