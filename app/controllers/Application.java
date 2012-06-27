@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import play.mvc.Controller;
@@ -34,8 +36,10 @@ public class Application extends Controller {
 		
 		BASE64Decoder base64Decoder = new BASE64Decoder();
 		try {
+			Date dt = new Date();
+			String timestamp = dt.toString().replaceAll(" ","_");
 			byte[] decodedBytes = base64Decoder.decodeBuffer(file1);
-			File newfile = new File("public" +File.separator +"images"+File.separator+"trialimages"+File.separator +"trialimage.png");
+		    File newfile = new File("public" +File.separator +"images"+File.separator+"trialimages"+File.separator +"trialimage_"+timestamp+".png");
 			FileOutputStream writer = new FileOutputStream(newfile);
 			System.out.println("Application.saveImage() imaged saved at path " + newfile.getAbsolutePath());
 			writer.write(decodedBytes);
@@ -64,9 +68,10 @@ public class Application extends Controller {
 	public static File copyTo(File photo1) {
 		// System.out.println("Absolute path :"+photo1.getAbsolutePath());
 
+		Date dt = new Date();
 		File photo2 = new File(
 				"/Users/kmanickavelu/workspace/TRYITON_UI/public/images/savedimages/saved_"
-						+ photo1.getName());
+						+ photo1.getName()+dt.toString());
 		// new File("\\public\\images\\savedimages\\saved_"+photo1.getName());
 		try {
 			System.out.println("photo1 is " + photo1);
